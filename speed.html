@@ -1,0 +1,48 @@
+<html>
+	<head>
+	<title>Speed Calculator</title>
+	<style>
+	body{
+  	padding:20px;
+ 	}
+	.center{
+	background:Lavender;
+	height:400px;
+	position:absolute;
+	padding: 30px 30px;
+        width: 400px;
+        position: absolute;
+        transform: translate(-50%,-50%);
+	text-align:center;
+        top: 40%;
+    left: 50%;
+    border-radius: 5px;
+    font-family: 'Poppins',sans-serif;
+    box-shadow: 25px 25px 30px rgba(0,0,0,0.15);
+	border:6px solid purple;
+	border-radius:10px;
+	align-items:center;
+	}
+	</style>
+	</head>
+	<body bgcolor="ivory">
+<div class="center">
+	<h3 align="center"><u>Speed Calculator</u></h3>	
+<img src="https://www.bbc.co.uk/staticarchive/42a1e3fb5903e60b19fc7f16c4c15b14dbb71004.gif" style="border:1px solid green"><br><br>
+	Distance<input id="distance"/ placeholder="in ms"><br/><br>
+
+	Time<input id="time"/ placeholder="in sec"><br/><br>
+	<button onClick="get()">Check Speed</button><br><br>
+	<p>Your Speed:</p><input type="text" id="ans">
+	</div>
+	<script>
+	function get(){
+	var a,b,c;
+	a=Number(document.getElementById("distance").value);
+	b=Number(document.getElementById("time").value);
+	c=a/b;
+	document.getElementById("ans").value=c;
+	}
+	</script>
+	</body>
+</html>

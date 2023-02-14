@@ -1,0 +1,89 @@
+<html>
+	<head>
+	  <title>BP Calculator</title>
+	  <style>
+	p{
+	font-size:17px;
+	}
+	.center{
+	background:Lavender;
+	height:380px;
+	position:absolute;
+	padding: 30px 30px;
+        width: 400px;
+        position: absolute;
+        transform: translate(-50%,-50%);
+	text-align:center;
+        top: 40%;
+    left: 50%;
+    border-radius: 5px;
+    font-family: 'Poppins',sans-serif;
+    box-shadow: 25px 25px 30px rgba(0,0,0,0.15);
+	border:6px solid purple;
+	border-radius:10px;
+	align-items:center;
+	}
+	  </style>
+	</head>
+	<body>
+<div class="center"><h1 align="center"><span><u>Blood Pressure Calculator</u></span></h1>
+<p>This <strong>blood pressure calculator</strong> estimates your mean arterial pressure based on your values of systolic and diastolic pressures. You can read more about these determinations below the form.</p>
+<div>Systolic pressure (SP):<span>*</span></div>
+        <div>
+            <input id="sp" type="text" placeholder="mmHg" >
+        </div>
+	<br>
+        <div>Diastolic pressure (DP):<span>*</span></div>
+        <div>
+            <input id="dp" type="text" placeholder="mmHg">
+        </div>
+	<br>
+          <input type="submit" name="submit" value="Calculate" onclick="check()"/><br>
+          <br><input type="button" value="Reset" onclick="rst1()" />
+<div id="FINISH"></div></div><br>
+	<br>
+	<script>
+	
+function check(){ 
+  var a =Number(document.getElementById("sp").value);
+ var b =Number(document.getElementById("dp").value);
+if(a<b){
+    alert("Systolic pressure (SP) is greater than Diastolic pressure (DP)!");
+    }
+    
+  else{
+    calculatesysdi();
+  }
+  }
+function calculatesysdi(){
+ 
+var a =Number(document.getElementById("sp").value);
+ var b =Number(document.getElementById("dp").value);
+var pp =a-b;
+ var fma=2*b;
+  var sma=fma+a;
+  var map=Math.round(sma/3);
+  document.getElementById("FINISH").innerHTML+="<br>Mean Artereial Pressure (MAP) "+" = "+map;
+  var Pp="Pulse Pressure (PP) = ";
+  var status="Blood pressure status : ";
+  if (a<120 && b<80){
+      document.getElementById("FINISH").innerHTML+="<br>"+status+"Normal Blood Pressure";
+      }
+  else if(a>119&&a<140 || b>79&&b<90){
+      document.getElementById("FINISH").innerHTML+="<br>"+status+"Pre-hypertension";
+      }
+  else if(a>139&&a<160 || b>89&&b<100){
+          document.getElementById("FINISH").innerHTML+="<br>"+status+"Stage I high blood pressure-hypertension";
+          }
+  else if(a>159&&a<181 || b>99&&b<111){
+          document.getElementById("FINISH").innerHTML+="<br>"+status+"Stage II high blood pressure-hypertension";
+          }
+  else if(a>180 || b>110){
+          document.getElementById("FINISH").innerHTML+="<br>"+status+"Hypertensive crisis(where emergency care is required)";
+          }
+  document.getElementById("FINISH").innerHTML+="<br>"+Pp+pp;
+    
+}
+	</script>
+	</body>
+</html>
