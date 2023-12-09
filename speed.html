@@ -1,48 +1,50 @@
 <html>
+	<meta charset="UTF-8">
 	<head>
 	<title>Speed Calculator</title>
+	<link rel="icon" type="image/x-icon" href="images/ic7.png">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 	<style>
-	body{
-  	padding:20px;
- 	}
-	.center{
-	background:Lavender;
-	height:400px;
-	position:absolute;
-	padding: 30px 30px;
-        width: 400px;
-        position: absolute;
-        transform: translate(-50%,-50%);
-	text-align:center;
-        top: 40%;
-    left: 50%;
-    border-radius: 5px;
-    font-family: 'Poppins',sans-serif;
-    box-shadow: 25px 25px 30px rgba(0,0,0,0.15);
-	border:6px solid purple;
-	border-radius:10px;
-	align-items:center;
-	}
-	</style>
+		body{
+            background-color: rgb(139, 226, 214);
+            text-align: center;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            font-size: small;
+            }
+        form{
+            background-color: rgb(255, 255, 255);
+            border:4px solid black;
+            border-radius:3px;
+            font-size:18px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            z-index:3;
+        }
+        input{
+            margin:5px;
+            width:60%;
+            text-align: center;
+            margin-right:2px;
+        }
+	</style>	
 	</head>
-	<body bgcolor="ivory">
-<div class="center">
-	<h3 align="center"><u>Speed Calculator</u></h3>	
-<img src="https://www.bbc.co.uk/staticarchive/42a1e3fb5903e60b19fc7f16c4c15b14dbb71004.gif" style="border:1px solid green"><br><br>
-	Distance<input id="distance"/ placeholder="in ms"><br/><br>
-
-	Time<input id="time"/ placeholder="in sec"><br/><br>
-	<button onClick="get()">Check Speed</button><br><br>
-	<p>Your Speed:</p><input type="text" id="ans">
-	</div>
-	<script>
-	function get(){
-	var a,b,c;
-	a=Number(document.getElementById("distance").value);
-	b=Number(document.getElementById("time").value);
-	c=a/b;
-	document.getElementById("ans").value=c;
-	}
-	</script>
+	<body>
+		<form class="text-center col-lg-4 col-md-4 col-sm-10 p-2 mx-auto mt-4">
+			<h3><u>Speed Calculator</u></h3>	
+			<img src="https://www.bbc.co.uk/staticarchive/42a1e3fb5903e60b19fc7f16c4c15b14dbb71004.gif" style="border:1px solid green"><br><br>
+			Distance<input  class="form-input text-center"  id="distance" placeholder="in meters"><br/><br>
+			Time<input class="form-input text-center" id="time" placeholder="in seconds"><br/><br>
+			<button class="btn-outline-primary btn-md btn" onClick="get()">Check Speed</button><br><br>
+			<p>Your Speed:</p><input  class="form-input text-center" type="text" id="ans">
+		</form>
+		<script>
+		function get(){
+		var a,b,c;
+		a=Number(document.getElementById("distance").value);
+		b=Number(document.getElementById("time").value);
+		c=a/(b*60);
+		document.getElementById("ans").value=c;
+		}
+		</script>
 	</body>
 </html>
