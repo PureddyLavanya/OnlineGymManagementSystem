@@ -1,56 +1,67 @@
-<html>
-	<head>
-	 <title>Tools</title>
-	<link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhOBLV6ubjDFNla1bvxcBeoHLILxjkRUOclA&usqp=CAU">
-	  <style>
-	*:after{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body{
-    height: 100vh;
-    background:Wheat;
-   padding:5px;
-}
-	h2,h4{
-	color:brown;
-	 font-family: 'Poppins',sans-serif;
-	}
- input{
-  font-weight:bold;
-  height:20px;
-	}
-.container{
-    background-color:Lavender;
-    padding: 30px 30px;
-    width: 500px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-	height:500px;
-    left: 50%;
-    border:7px solid green;
-    border-radius:10px;
-    font-family: 'Poppins',sans-serif;
-    box-shadow: 25px 25px 30px rgba(0,0,0,0.15);
-}
-	  </style>
-	</head>
-	<body bgcolor="ivory" align="center">
-	<div class="container">
-	<h2>There are many ways to maintain a healthy life.Use the following tools to check your health and fitness</h2>
-	<h4>Check Your BMI Here:<h4>
-<input type="submit" value="Check BMI"onClick="window.location.href='bmi.html'" class="bn"style="border:1px solid green; border-radius:4px; background-color:yellow; color:blue;"><br>
-	<h4>Follow The Below Exercise Library:</h4>
-<input type="submit"value="GET ExerciseLibrary"onClick="window.location.href='exerlib.html'" class="bn" style="border:1px solid green; border-radius:4px; background-color:yellow; color:blue;"><br>
-	<h4>Convert Your Weight:<h4>
-	<input type="submit" value="Convert Weight"onClick="window.location.href='weight.html'" class="bn" style="border:1px solid green; border-radius:4px; background-color:yellow; color:blue;"><br> 
-	<h4>
-	<h4>Check Your Blood Pressure:</h4>
-	<input type="submit" value="Blood Pressure Calculator" onClick="window.location.href='bpcalci.html'"  class="bn" style="border:1px solid green; border-radius:4px; background-color:yellow; color:blue;"><br>
-	<h4>Calculate Your Speed:</h4>
-	<input type="submit" value="Speed Calculator" onClick="window.location.href='speed.html'" class="bn" style="border:1px solid green; border-radius:4px; background-color:yellow; color:blue; font-weight:bold;">
-	</div>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Health Tools Page</title>
+	<link rel="icon" type="image/x-icon" href="images/ic7.png">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<style>
+		body{
+			background-color: ivory;
+			font-family:Georgia, 'Times New Roman', Times, serif;
+		}
+        .t{
+            padding:2px;
+            background-color: rgb(255, 255, 255);
+        }
+        .t>img{
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px black;
+            opacity: 1;
+        }
+        .t:hover{
+            padding:4px;
+        }
+        .t:hover>img{
+            transform: scale(1.1);
+            transition: 0.5s;
+            opacity: 0.2;
+        }
+        .t:hover{
+            background-color: rgb(186, 181, 181);
+            box-shadow: 0px 0px 10px 0px black;
+            transition: 0.5s;
+        }
+	</style>
+</head>
+<body>
+	<h3 class="text-center m-3">Available Health Measuring Tools</h3>
+	<div class="row mt-1 py-3">
+        <div class="col-lg-3 col-md-5 col-sm-6 ml-5 m-3 mb-0 mx-auto text-center t">
+           <a href="bmi.html"><img src="images/t1.jpeg" alt="BMI_Calculator" class="img-fluid crt"></a>
+		   <h5>BMI Calculator</h5>
+        </div>
+        <div class="col-lg-3 col-md-5 col-sm-6  m-3 mb-0 mx-auto text-center t">
+            <a href="weight.html"><img src="images/t2.jpeg" alt="Weight_Calculator" class="img-fluid crt"></a>
+			<h5>Weight Calculator</h5>
+        </div>
+        <div class="col-lg-3 col-md-5 col-sm-6  m-3 mb-0 mx-auto text-center t">
+            <a href="exerlib.html"><img src="images/t5.jpeg" alt="Exercise_Library" class="img-fluid crt"></a>
+			<h5>Exercise Library</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-5 col-sm-6 ml-5 mt-0 m-3 mx-auto text-center t">
+            <a href="speed.html"><img src="images/t4.png" alt="Speed_Calculator" class="img-fluid crt"></a>
+			<h5>Speed Calculator</h5>
+        </div>
+        <div class="col-lg-3 col-md-5 col-sm-6 m-1 mx-auto text-center t">
+            <a href="bpcalci.html"><img src="images/t3.jpeg" alt="BP_Calculator" class="img-fluid crt"></a>
+			<h5 >BP Calculator</h5>
+        </div>
+    </div>
+</body>
 </html>
