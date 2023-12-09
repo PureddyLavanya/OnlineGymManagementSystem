@@ -1,47 +1,53 @@
+<!DOCTYPE html>
 <html>
+        <meta charset="UTF-8">
 	<head>
-	  <title>BP Calculator</title>
+          <title>BP Calculator</title>
+          <link rel="icon" type="image/x-icon" href="images/t3.jpeg">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 	  <style>
-	p{
-	font-size:17px;
-	}
-	.center{
-	background:Lavender;
-	height:380px;
-	position:absolute;
-	padding: 30px 30px;
-        width: 400px;
-        position: absolute;
-        transform: translate(-50%,-50%);
-	text-align:center;
-        top: 40%;
-    left: 50%;
-    border-radius: 5px;
-    font-family: 'Poppins',sans-serif;
-    box-shadow: 25px 25px 30px rgba(0,0,0,0.15);
-	border:6px solid purple;
-	border-radius:10px;
-	align-items:center;
-	}
+             body{
+            background-color: rgb(139, 226, 214);
+            text-align: center;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            font-size: small;
+            }
+        form{
+            background-color: rgb(255, 255, 255);
+            border:4px solid black;
+            border-radius:3px;
+            font-size:17px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            z-index:3;
+        }
+        input{
+            margin:5px;
+            width:50%;
+            text-align: center;
+            margin-right:2px;
+        }   
+        #FINISH{
+            font-size: 20px;
+            font-weight: 600;
+            display: inline-block;
+            text-shadow: 0 0 3px #cf68e3, 0 0 5px #0000FF;
+            margin: 20px 0px 20px 0px;
+            position:absolute;
+            transform: translate(-50%, -50%);
+        }   
 	  </style>
 	</head>
 	<body>
-<div class="center"><h1 align="center"><span><u>Blood Pressure Calculator</u></span></h1>
-<p>This <strong>blood pressure calculator</strong> estimates your mean arterial pressure based on your values of systolic and diastolic pressures. You can read more about these determinations below the form.</p>
-<div>Systolic pressure (SP):<span>*</span></div>
-        <div>
-            <input id="sp" type="text" placeholder="mmHg" >
-        </div>
-	<br>
-        <div>Diastolic pressure (DP):<span>*</span></div>
-        <div>
-            <input id="dp" type="text" placeholder="mmHg">
-        </div>
-	<br>
-          <input type="submit" name="submit" value="Calculate" onclick="check()"/><br>
-          <br><input type="button" value="Reset" onclick="rst1()" />
-<div id="FINISH"></div></div><br>
-	<br>
+                <form class="text-center col-lg-4 col-md-7 col-sm-10 p-3 mx-auto mt-4">
+                        <h4 align="center"><span>Blood Pressure Calculator</span></h4>
+                        <p>This <strong>blood pressure calculator</strong> estimates your mean arterial pressure based on your values of systolic and diastolic pressures. You can read more about these determinations below the form.</p>
+                        Systolic pressure (SP):<input id="sp" type="text" placeholder="mmHg">
+                        Diastolic pressure (DP):<input id="dp" type="text" placeholder="mmHg">
+                        <input type="submit" class="btn btn-outline-warning" name="submit" value="Calculate" onclick="check()"/>
+                        <input type="button"  class="btn btn-outline-primary" value="Reset" onclick="rst1()" />
+                </form>
+                <div id="FINISH"></div>
 	<script>
 	
 function check(){ 
@@ -63,26 +69,27 @@ var pp =a-b;
  var fma=2*b;
   var sma=fma+a;
   var map=Math.round(sma/3);
-  document.getElementById("FINISH").innerHTML+="<br>Mean Artereial Pressure (MAP) "+" = "+map;
+  var opttxt=document.createElement("p");
+  opttxt.innerHTML+="\n Mean Artereial Pressure (MAP) "+" = "+map;
   var Pp="Pulse Pressure (PP) = ";
-  var status="Blood pressure status : ";
+  var status="\nBlood pressure status :";
   if (a<120 && b<80){
-      document.getElementById("FINISH").innerHTML+="<br>"+status+"Normal Blood Pressure";
+      opttxt.innerHTML+=status+"Normal Blood Pressure";
       }
   else if(a>119&&a<140 || b>79&&b<90){
-      document.getElementById("FINISH").innerHTML+="<br>"+status+"Pre-hypertension";
+      opttxt.innerHTML+=status+"Pre-hypertension";
       }
   else if(a>139&&a<160 || b>89&&b<100){
-          document.getElementById("FINISH").innerHTML+="<br>"+status+"Stage I high blood pressure-hypertension";
+          opttxt.innerHTML+=status+"Stage I high blood pressure-hypertension";
           }
   else if(a>159&&a<181 || b>99&&b<111){
-          document.getElementById("FINISH").innerHTML+="<br>"+status+"Stage II high blood pressure-hypertension";
+          opttxt.innerHTML+=status+"Stage II high blood pressure-hypertension";
           }
   else if(a>180 || b>110){
-          document.getElementById("FINISH").innerHTML+="<br>"+status+"Hypertensive crisis(where emergency care is required)";
+          opttxt.innerHTML+=status+"Hypertensive crisis(where emergency care is required)";
           }
-  document.getElementById("FINISH").innerHTML+="<br>"+Pp+pp;
-    
+  opttxt.innerHTML+="\n"+Pp+pp;
+  alert(opttxt.innerHTML);
 }
 	</script>
 	</body>
