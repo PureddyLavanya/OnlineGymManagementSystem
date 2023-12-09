@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer Registration Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <style>
+        body{
+            background-color: rgb(139, 226, 214);
+            text-align: center;
+            box-sizing: border-box;
+            font-size: small;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+        form{
+            background-color: rgb(255, 255, 255);
+            border:4px solid black;
+            border-radius:3px;
+            padding:13px;
+            margin-left:30%;
+            margin-top:2px;
+            margin-right:25%;
+            font-size:20px;
+            z-index:3;
+        }
+        input{
+            margin:12px;
+            width:60%;
+            text-align: center;
+            margin-right:2px;
+        }
+        input[type="submit"]{
+            text-align: center;
+            color: rgb(255, 255, 255);
+            border:2px solid black;
+            border-radius:3px;
+            padding:10px;
+            font-size:24px;
+            font-weight: 600;
+            margin-left:20%;
+            margin-right:20%;
+        }
+        .n{
+            margin:12px;
+            width:60%;
+            text-align: center;
+            margin-right:2px;
+        }
+        p{
+            font-size: 20px;
+            font-weight: 600;
+        }
+        a:hover{
+            color: rgb(201, 74, 208);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="trainerregvalid.php" class="col-lg-5 col-md-7 col-sm-10 mx-auto" method="post" autocomplete="off">
+        Name:<input  class="text-center" type="text" name="tname" maxlength="30"  placeholder="Enter name here" required><br>
+        Gender:
+				<select name="gender" class="n">
+					<option value="Female">Female</option>
+					<option value="Male">Male</option>
+				</select><br>
+        Email:<input class="text-center"  type="email" name="eml" maxlength="50" placeholder="Enter email here"  required><br>
+        Password:<input class="text-center"  type="password" name="pwd" maxlength="15" placeholder="Enter password here" required><br>
+        Confirm Password:<input class="text-center"  type="password" name="cpwd" maxlength="15" placeholder="Enter confirm password here" required><br>
+        Phone Number:<input class="text-center"  type="text" name="phno" maxlength="10" placeholder="Enter phone number here" required><br>
+        Address:<br>
+        <textarea rows="5" cols="30" name="addr" class="n text-center"></textarea><br>
+            <button type="submit" value="Register" class="btn btn-outline-primary btn-lg">Register</button>
+    </form>
+    <p class="text-center mt-2">Have an account? <a href="trainerlogin.html">Login here</a></p>
+</body>
+</html>

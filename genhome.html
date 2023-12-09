@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="icon" href="images/ic1.png">
+    <link rel="stylesheet" href="css/hm1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    </head>
+<body>
+    <nav class="navbar navbar-fixed-top navbar-expand-sm navbar-expand-md navbar-expand-lg h-15 w-100 bg-dark"> 
+        <a class="navbar-brand m-2 ml-5" href="index.html"><img src="images/ic1.png" alt="logo" width="50px" height="40px"></a>
+        <button class="navbar-toggler bg-warning text-danger" title="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar navbar-fixed-top navbar-expand-sm navbar-expand-md">
+            <li class="nav-item"><a class="nav-link" href="imp.html">Importance Of Health</a></li>
+            <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+            <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li> 
+            <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li> 
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item lgt"><a class="nav-link" href="index.html">Login</a></li>
+        </ul>
+        </div>
+    </nav>
+    <div class="slideshow-container mx-auto">
+		<div class="mySlides fade">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTn3xoq9ROOA7B1lOOzptta2S1Af_V5Ennow&usqp=CAU"style="width:100%;height:550px;padding:15px 25px 15px 25px;">
+		</div>
+		<div class="mySlides fade">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4OWbmAmQVkajcAGujfqnvHj79he-cB2j7fg&usqp=CAU"style="width:100%;height:550px;padding:12px 22px 12px 22px;"> 
+		</div>
+		<div class="mySlides fade">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5cyVlemyUsjuo4i7ddm56QnG5SgvbbEcUYg&usqp=CAU"style="width:100%;height:550px;padding:12px 22px 12px 22px;">
+		</div>
+		<div class="mySlides fade">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3JfS75qX9lSDK-lxUAbr8NMA8naGvcY7dMw&usqp=CAU"style="width:100%;height:550px;padding:12px 22px 12px 22px;">
+		</div>
+		<div class="mySlides fade">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjTCwqn9Bz7eRTgtwDygYd8OJNraX-x5ejBg&usqp=CAU"style="width:100%;height:550px;padding:12px 22px 12px 22px;">
+		</div>
+		<div class="mySlides fade">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFqzjnp-AxAuDWQw504ZNWfOKRU_Fzi5e70w&usqp=CAU"style="width:100%;height:550px;padding:12px 22px 12px 22px;">
+		</div>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+    <span class="dot" onclick="currentSlide(4)"></span> 
+    <span class="dot" onclick="currentSlide(5)"></span> 
+    <span class="dot" onclick="currentSlide(6)"></span> 
+    </div>
+    <script>
+        var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?php
+  session_start();
+  require('db_conn.php');
+  if(!empty($_POST['telogin']))
+    {
+      $tname=$_POST['tname'];
+      $pkey=$_POST['pkey'];
+      $sql="SELECT * FROM trainee WHERE tname='$tname' AND pkey='$pkey'";
+      $result=mysqli_query($conn,$sql);
+      if(mysqli_num_rows($result)==1)
+      {
+        $_SESSION['tname']=$tname;
+        header("Location:home.html");
+      }
+      else
+      {
+       header("Location:index.html");
+      } 
+    }
+?>

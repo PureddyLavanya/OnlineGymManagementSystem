@@ -1,0 +1,20 @@
+<?php
+  session_start();
+  require('db_conn.php');
+  if(!empty($_POST['trlogin']))
+    {
+      $tname=$_POST['tname'];
+      $pwd=$_POST['pwd'];
+      $sql="SELECT * FROM trainer WHERE tname='$tname' AND pwd='$pwd'";
+      $result=mysqli_query($conn,$sql);
+      if(mysqli_num_rows($result)==1)
+      {
+        $_SESSION['tname']=$tname;
+        header("Location:trainerdashboard.html");
+      }
+      else
+      {
+        header("Location:trainerlogin.html");
+      } 
+    }
+?>
