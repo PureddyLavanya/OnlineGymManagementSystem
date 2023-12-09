@@ -1,53 +1,70 @@
+<!DOCTYPE html>
 <html>
 	<head>
 	<title>Feedback Form</title>
-	<link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT3C9rIruCPWoKApv91dabA19L7QNOonKgNQ&usqp=CAU">
+	<link rel="icon" type="image/x-icon" href="images/ic5.jpeg">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 	<style>
-	.center{
-	background:Lavender;
-	height:430px;
-	position:absolute;
-	padding: 30px 30px;
-        width: 600px;
-        position: absolute;
-        transform: translate(-50%,-50%);
-	text-align:center;
-        top: 40%;
-    left: 50%;
-    border-radius: 5px;
-    font-family: 'Poppins',sans-serif;
-    box-shadow: 25px 25px 30px rgba(0,0,0,0.15);
-	border:6px solid purple;
-	border-radius:10px;
-	align-items:center;
-	}
-	
-	.n{
-	background-color:ivory;
-	border-radius:6px;
-	border:3px solid Teal;
-	}
-	
-	</style>
-	   <title>Feedback Form</title>
+        body{
+            background-color: rgb(139, 226, 214);
+            text-align: center;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            font-size: small;
+            }
+        form{
+            background-color: rgb(255, 255, 255);
+            border:4px solid black;
+            border-radius:3px;
+            padding:13px;
+            margin-left:30%;
+            margin-top:5%;
+            margin-right:25%;
+            font-size:20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            z-index:3;
+        }
+        input{
+            margin:9px;
+            width:60%;
+            text-align: center;
+            margin-right:2px;
+        }
+		.n{
+			margin:9px;
+            width:60%;
+            text-align: center;
+            margin-right:2px;
+		}
+		textarea{
+			margin:9px;
+			width:60%;
+			text-align: center;
+			margin-right:2px;
+		}
+    </style>
 	</head>
 	<body align="center" bgcolor="WhiteSmoke">
-	<div class="center">
-	   
-	 					<h3><u>Fill The Following Feedback Form </u></h3>
-			
-  Name:<input type="text" class="n" placeholder="Enter name here" autocomplete maxlength="15" size="60%"><br><br>
-			Email:<input type="mail" class="n"placeholder="Enter email here" autocomplete maxlength="40" size="60%"><br><br>
-			Phone Number:<input type="text" class="n" placeholder="Enter mobile number here" autocomplete maxlength="10" size="60%"><br><br>
-       		        Select Age:
-			<input type="radio" name="age" value="on">12-18<br>
-		   	<input type="radio"  name="age" value="on">19-25<br>
-		 	<input type="radio"  name="age" value="on">26-40<br>
-		  		        <input type="radio" name="age" value="on">Above 40<br><br>
-			Feedback:<br><textarea rows="5" cols="30" name="feedback" class="n">
-		 </textarea><br><br>
-					<input type="submit" value="SUBMIT" onClick="window.location.href='response.html'"class="n">
-			
-	</div>
+		<form action="feedback.php" class="col-lg-5 col-md-4 col-sm-10 mx-auto" method="post" autocomplete="off">
+			Name:<input  class="text-center" type="text" name="uname" maxlength="30"  placeholder="Enter name here" required><br>
+			Gender:
+				<select name="gender" class="n">
+					<option value="Female">Female</option>
+					<option value="Male">Male</option>
+				</select><br>
+			Email:<input class="text-center" type="email" name="eml" maxlength="50" placeholder="Enter email here"  required><br>
+			Phone Number:<input class="text-center" type="text" name="phno" maxlength="10" placeholder="Enter phone number here" required><br>
+			Select Age:
+				<select name="age" class="n">
+					<option value="0-18">0-18</option>
+					<option value="19-30">19-30</option>
+					<option value="31-50">31-50</option>
+					<option value="51-70">51-70</option>
+					<option value="71-100">71-100</option>
+				</select><br>
+			Feedback:<br>
+				<textarea rows="5" cols="30" name="fdb" class="n"></textarea><br>
+				<button type="submit" class="btn btn-outline-primary btn-lg">Submit</button>
+		</form>
 	</body>
 </html>
